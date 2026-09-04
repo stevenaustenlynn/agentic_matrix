@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-04",
+  "experiment": "GENERAL_CODEX_ENGINEERING_LOOP_V1_1_STAGE_A",
+  "cohort_id": "GENERAL_CODEX_STAGE_A_001",
+  "status": "COMPLETE_ACCEPTED",
+  "experimental_units": 24,
+  "model_calls": 22,
+  "experimental_reruns": 0,
+  "routing_result": {
+    "winner": "P0_BY_NON_PROMOTION",
+    "P1_promoted": false,
+    "P2_promoted": false,
+    "P3_promoted": false,
+    "general_router_promoted": false,
+    "holdout_complete": true,
+    "stage_b_authorized": false
+  },
+  "development_and_sentinel": {
+    "P0": {
+      "units": 4,
+      "quality_pass": 4,
+      "active_seconds_median": 45.47202314942842,
+      "active_seconds_min": 33.614132778020576,
+      "active_seconds_max": 203.67882178991567,
+      "total_tokens_median": 138667.0,
+      "total_tokens_min": 106984,
+      "total_tokens_max": 298926
+    },
+    "P1": {
+      "units": 4,
+      "quality_pass": 3,
+      "active_seconds_median": 61.40720923501067,
+      "active_seconds_min": 47.087671639048494,
+      "active_seconds_max": 148.6506261320319,
+      "total_tokens_median": 162715.0,
+      "total_tokens_min": 140590,
+      "total_tokens_max": 224092,
+      "hard_quality_failure": "S1_SENTINEL"
+    },
+    "P2": {
+      "units": 4,
+      "quality_pass": 4,
+      "active_seconds_median": 56.01250505296048,
+      "active_seconds_min": 34.09686360904016,
+      "active_seconds_max": 239.6593653759919,
+      "total_tokens_median": 179703.5,
+      "total_tokens_min": 104034,
+      "total_tokens_max": 336393
+    },
+    "P3": {
+      "units": 4,
+      "quality_pass": 4,
+      "active_seconds_median": 63.483231713064015,
+      "active_seconds_min": 39.49271515698638,
+      "active_seconds_max": 222.9952286449261,
+      "total_tokens_median": 161076.5,
+      "total_tokens_min": 101459,
+      "total_tokens_max": 323158
+    }
+  },
+  "holdout": {
+    "H1_NEUTRAL_B": {
+      "P0": {"active_seconds": 65.38518878794275, "total_tokens": 170676, "quality_pass": true},
+      "WINNER_P0": {"active_seconds": 49.07526678906288, "total_tokens": 163462, "quality_pass": true}
+    },
+    "H2_OTHER_HOLDOUT": {
+      "WINNER_P0": {"active_seconds": 13.918365280027501, "total_tokens": 19672, "quality_pass": true},
+      "P0": {"active_seconds": 11.126120173954405, "total_tokens": 19383, "quality_pass": true}
+    }
+  },
+  "review_detection": {
+    "R0": {"true_positives": 0, "false_positives": 0, "false_negatives": 2},
+    "R1": {"true_positives": 2, "false_positives": 0, "false_negatives": 0},
+    "R1_cases": {
+      "RCASE1": {"active_seconds": 32.67419820197392, "total_tokens": 81952},
+      "RCASE2": {"active_seconds": 34.38173061795533, "total_tokens": 83102}
+    },
+    "global_review_superiority_claim": false,
+    "note": "N=2; bounded promise only"
+  },
+  "aggregate_model_usage": {
+    "model_calls": 22,
+    "total_tokens": 3458207,
+    "input_tokens": 3347321,
+    "cached_input_tokens": 2780288,
+    "output_tokens": 70475,
+    "reasoning_tokens": 40411,
+    "codex_active_seconds": 1628.5862332778051,
+    "wall_seconds": 1631.975306189037
+  },
+  "infrastructure_incident": {
+    "classification": "INFRASTRUCTURE_NOT_CANDIDATE_FAILURE",
+    "signal": "NON_CONFIG_GATE0_FAILURE:candidate_identity",
+    "occurred_after_units_17_24_durable_completion": true,
+    "experimental_units_rerun": false
+  },
+  "final_artifact_identities": {
+    "stage-a-complete.json": "9e5b901587c12a23b3053bbf325c11ed6cbd49b3fe05c3df8110e9fc7456c6f2",
+    "stage-a-final-report.json": "aaca39eb939ddf1f6dd5a00a5c44a399196eefefb6ca03857d17349decaafa25",
+    "stage-a-final-report.md": "bc4699188bbfd882c7845019dbd14c18e09fa239c0c2491a7aa584af066773c2",
+    "stage-a-finalization-manifest.json": "5c69a4f9adab81c6e9d98f3af3a9c0ce15c7a91751c9b8482f59ec41d1ab0f1a"
+  },
+  "original_evidence_root": "~/.local/share/lapis/experiments/general-codex-engineering-loop/v1.1/runtime/stage-a-001/",
+  "claim_ceiling": "BOUNDED_TESTED_WORKFLOW_RESULT_NOT_GLOBAL_SUPERIORITY"
+}
