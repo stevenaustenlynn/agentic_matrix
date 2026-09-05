@@ -12,6 +12,8 @@ The current real workflow is always the baseline. A candidate becomes default on
 
 Availability is not activation. Activation is not qualification. Technical success is not owner acceptance.
 
+All future governed agentic runs must also comply with `AGENTIC_LIVE_TELEMETRY_STANDARD_V1.md`. Missing native telemetry remains `UNKNOWN`; it must never be silently converted to zero usage.
+
 ## Baseline and candidate arms
 
 - **P0 — current production-style baseline.** Human-directed Codex workflow with the then-current proven controls. No speculative router.
@@ -53,7 +55,11 @@ Before spending experimental model calls, freeze:
 - holdout design;
 - repair/failure classification rules;
 - artifact/evidence locations;
-- stop conditions and authority boundaries.
+- stop conditions and authority boundaries;
+- live-token telemetry source and retention path;
+- context-window source when available;
+- terminal-monitor presentation path;
+- maximum model-call budget covering the longest authorized causal path, including required repair and rereview calls.
 
 Do not modify these after observing results except through an explicitly labeled posthoc amendment.
 
@@ -73,9 +79,14 @@ At minimum collect:
 - model-call count;
 - input tokens;
 - cached input tokens;
+- uncached input tokens (`input - cached input`);
 - output tokens;
 - reasoning tokens when available;
 - total token volume;
+- cumulative run token volume;
+- context-window utilization when available;
+- cache-hit percentage when defined;
+- native token-usage deltas / rate when available;
 - active model seconds;
 - end-to-end wall time;
 - operator-attention burden where measurable;
@@ -84,6 +95,24 @@ At minimum collect:
 - added workflow complexity.
 
 Quality, correctness, authority, security, sovereignty, and claim validity are hard constraints. A faster arm that violates them does not win.
+
+## Live telemetry requirement
+
+For every future governed agentic run:
+
+```text
+LIVE_TOKEN_TELEMETRY=REQUIRED
+RAW_TOKEN_EVENT_RETENTION=REQUIRED
+PER_CALL_TOKEN_RECEIPT=REQUIRED
+CUMULATIVE_RUN_TOKEN_SUMMARY=REQUIRED
+CACHED_VS_UNCACHED_INPUT=REQUIRED
+CONTEXT_WINDOW_UTILIZATION=REQUIRED_WHEN_AVAILABLE
+TERMINAL_MONITOR_DISPLAY=REQUIRED
+LAPIS_TUI_PRESENTATION=FUTURE_THIS_TUI_SLICE_OR_NEXT
+ATHANOR_MEASUREMENT_EXPORT=REQUIRED_WHEN_ATHANOR_INTEGRATES
+```
+
+The normative details are in `AGENTIC_LIVE_TELEMETRY_STANDARD_V1.md`. Native executor usage events are the source of truth where available. The monitor is read-only and must not retry, advance, accept, signal, or mutate the worker.
 
 ## Matched comparison
 
@@ -128,9 +157,10 @@ Separate:
 - authority failure;
 - infrastructure ambiguity;
 - test expectation defect;
+- telemetry/instrumentation defect;
 - genuine task failure.
 
-Do not spend a candidate repair call on a controller or environment failure. Fix the experiment machinery, preserve the candidate budget, and rerun only when justified.
+Do not spend a candidate repair call on a controller, telemetry, or environment failure. Fix the experiment machinery, preserve the candidate budget, and rerun only when justified.
 
 ## Evidence
 
@@ -140,7 +170,10 @@ Every run should preserve:
 - allocation table;
 - task/unit receipts;
 - Codex event streams when available;
-- token usage;
+- append-only raw token events;
+- live telemetry snapshot;
+- per-call token receipts;
+- cumulative run-token summary;
 - wall/active times;
 - changed-file and diff identities;
 - verification logs;
@@ -160,12 +193,13 @@ Use bounded claims only. A successful run can support statements about the exact
 1. Freeze current P0.
 2. Define one candidate treatment.
 3. Pull task classes from recent real engineering history.
-4. Preregister allocation, MPIDs, evaluator, holdout, and authority.
-5. Run deterministic baseline checks.
-6. Execute matched experimental units.
-7. Run holdout.
-8. Run optional reviewer arm if relevant.
-9. Aggregate metrics.
-10. Apply promotion/non-promotion rules.
-11. Write a dated immutable case study.
-12. Keep the winning workflow as the next run's P0.
+4. Preregister allocation, MPIDs, evaluator, holdout, authority, telemetry, and longest-path model-call budget.
+5. Initialize durable live-token telemetry and the read-only monitor before the first model call.
+6. Run deterministic baseline checks.
+7. Execute matched experimental units.
+8. Run holdout.
+9. Run optional reviewer arm if relevant.
+10. Aggregate metrics, including cached/uncached context and context-window utilization where available.
+11. Apply promotion/non-promotion rules.
+12. Write a dated immutable case study.
+13. Keep the winning workflow as the next run's P0.
