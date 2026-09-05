@@ -10,7 +10,10 @@ This repository preserves the method so future skills, reviewers, routing polici
 
 ## Structure
 
-- `methods/AGENTIC_MATRIX_METHOD_V1_1.md` — reusable current method.
+- `methods/AGENTIC_MATRIX_METHOD_V1_1.md` — reusable current experimental method.
+- `methods/AGENTIC_LIVE_TELEMETRY_STANDARD_V1.md` — owner-required native token telemetry, durable usage evidence, and live monitor standard.
+- `methods/AGENTIC_TOKEN_ATTRIBUTION_STANDARD_V1.md` — owner-required token-driver attribution, context-component manifests, Pareto/waste diagnosis, and attribution ceilings.
+- `methods/AGENTIC_CONTROLLER_EXECUTION_STANDARD_V1.md` — owner-required controller/transport/budget/evidence/review discipline extracted from real LAPIS engineering failures and recoveries.
 - `methods/GENERAL_CODEX_ENGINEERING_LOOP_EXPERIMENT_PREREGISTRATION_V1_1.md` — exact frozen 2026-09-04 preregistration.
 - `methods/GENERAL_CODEX_ENGINEERING_LOOP_24_RUN_ALLOCATION_V1_1.md` — exact Stage-A allocation.
 - `methods/GENERAL_CODEX_PATHWAY_GAP_ANALYZER_V1_1.md` — gap/inefficiency classification and remedy ladder.
@@ -19,6 +22,8 @@ This repository preserves the method so future skills, reviewers, routing polici
 - `case-studies/` — immutable dated experiment reports.
 - `data/` — normalized machine-readable metrics for each run.
 - `archive/` — superseded designs retained for provenance.
+
+The operating standards are cross-project method. They do not import LAPIS project authority into another repository and do not create Git, provider, production, acceptance, release, or deployment authority.
 
 ## Current proven workflow result
 
