@@ -23,20 +23,20 @@ LONG_MACHINE_WORK
 
 The worker and monitor are separate failure domains. Monitor failure must not terminate, retry, accept, advance, or corrupt the worker.
 
-## Codex model policy
+## Historical validated Codex configuration
 
-Owner-selected current default for high-value agentic coding work:
+The following configuration was the owner-selected default for high-value agentic coding work when this standard was extracted on **2026-09-05**:
 
 ```text
 MODEL=gpt-6-astra
 REASONING=xhigh
 ```
 
-This is an owner workflow selection, not an Agentic Matrix superiority claim. Future matched evidence may change the default.
+This is retained as dated workflow evidence, not as an Agentic Matrix superiority claim or a recommendation that future studies use the same model, reasoning level, or CLI version. Future matched evidence may justify a different configuration.
 
-## Proven GPT-6 Astra transport profile
+## Historical GPT-6 Astra transport profile
 
-On Codex CLI 0.153.1, LAPIS isolated probe `LAPIS_ASTRA_ISOLATED_MODEL_PATH_PROBE_071` established that `gpt-6-astra` works through an isolated Codex configuration. The reliable execution family used by the successful successor was:
+On Codex CLI 0.153.1, LAPIS isolated probe `LAPIS_ASTRA_ISOLATED_MODEL_PATH_PROBE_071` established that `gpt-6-astra` worked through an isolated Codex configuration in that historical environment. The reliable execution family used by the successful successor was:
 
 ```text
 codex exec
