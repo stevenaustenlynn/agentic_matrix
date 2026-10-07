@@ -23,7 +23,7 @@ CASE_STUDY_PATH = ROOT / "case-studies" / "2026-09-04_GENERAL_CODEX_ENGINEERING_
 
 
 def fail(message: str) -> None:
-    print(f"STAGE_A_DATA_VALIDATION=FAIL\\nERROR={message}", file=sys.stderr)
+    print(f"STAGE_A_DATA_VALIDATION=FAIL\nERROR={message}", file=sys.stderr)
     raise SystemExit(1)
 
 
@@ -223,7 +223,7 @@ def main() -> None:
     )
 
     review_pattern = re.compile(
-        r"REVIEW_R(?P<arm>[01])=TP(?P<tp>\\d+) FP(?P<fp>\\d+) FN(?P<fn>\\d+)"
+        r"REVIEW_R(?P<arm>[01])=TP(?P<tp>\d+) FP(?P<fp>\d+) FN(?P<fn>\d+)"
     )
     case_review = {
         f"R{match.group('arm')}": {
